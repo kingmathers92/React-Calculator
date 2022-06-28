@@ -23,7 +23,7 @@ function reducer(state, { type, payload }) {
       if (payload.digit === "0" && state.currOperand === "0") {
         return state;
       }
-      if (payload.digit === "." && state.currOperand.include(".")) {
+      if (payload.digit === "." && state.currOperand.includes(".")) {
         return state;
       }
       return {
@@ -68,7 +68,7 @@ function reducer(state, { type, payload }) {
         };
       }
       if (state.currOperand == null) return state;
-      if (state.currOperand === 1) {
+      if (state.currOperand.length === 1) {
         return { ...state, currOperand: null };
       }
 
